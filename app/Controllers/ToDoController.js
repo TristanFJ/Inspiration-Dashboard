@@ -9,26 +9,8 @@ function _drawToDo() {
   let toDos = ProxyState.toDos
   let template = ''
   const toDoPage = document.getElementById('todo')
-  toDos.forEach(t => template += `
-  
-  <div class="row align-items-center">
-  <div class="col-10">
-  <input onclick="app.toDoController.toggleCheck('${t.id}')" type="checkbox" id="${t.id}" name="${t.id}"
-  ${t.completed ? 'checked' : ''}>
-  <label for="${t.id}" style="${t.completed ? 'text-decoration: line-through;'
-  : ''
-  }">${t.description}</label>
-  </div>
-  <div class="col-2 my-1">
-  <button class="btn btn-sm btn-danger" onclick="app.toDoController.deleteToDo('${t.id}')">x</button><br>
-  </div>
-  
-  </div>
-
-  
-  `)
+  toDos.forEach(t => template += t.Template)
   toDoPage.innerHTML = template
-
 }
 
 export class ToDoController {
@@ -45,7 +27,6 @@ export class ToDoController {
       let formData = {
         description: form.description.value
       }
-      console.log('createToDo controller passed data');
       await toDoService.createToDo(formData)
       this.getToDo()
       form.reset()
@@ -81,5 +62,9 @@ export class ToDoController {
       console.error(e);
     }
 
+  }
+
+  countToDos() {
+    toDoService.countToDos()
   }
 }
