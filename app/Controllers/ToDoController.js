@@ -15,6 +15,7 @@ function _drawToDo() {
 
 export class ToDoController {
   constructor() {
+    this.getToDo()
     ProxyState.on('toDos', _drawToDo)
 
   }
@@ -36,6 +37,19 @@ export class ToDoController {
     }
 
 
+  }
+
+  async getToDo() {
+
+    try {
+
+
+      await toDoService.getToDo()
+
+
+    } catch (error) {
+      console.error(error);
+    }
   }
 
 }

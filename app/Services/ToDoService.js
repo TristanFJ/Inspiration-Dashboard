@@ -21,5 +21,13 @@ class ToDoService {
     const res = await sandboxApi.post('Tristan/todos', toDo)
     console.log(res.data);
   }
+
+  async getToDo() {
+    let toDos = ProxyState.toDos
+    const res = await sandboxApi.get('Tristan/todos')
+    toDos = res.data
+    console.log('res.data: ', res.data);
+
+  }
 }
 export const toDoService = new ToDoService();
