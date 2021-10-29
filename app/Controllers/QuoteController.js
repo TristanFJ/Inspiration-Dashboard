@@ -9,10 +9,13 @@ function _drawQuote() {
 
   let quote = ProxyState.quote
   let template = ''
+  let authorTemplate = ''
   const quotePage = document.getElementById('quote')
-  console.log(quote);
+  const authorPage = document.getElementById('author')
   template += quote.content
+  authorTemplate += quote.author
   quotePage.innerText = template
+  authorPage.innerText = authorTemplate
 }
 
 export class QuoteController {

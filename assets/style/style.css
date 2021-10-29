@@ -1,1 +1,10 @@
 /* BASIC STYLES HERE */
+.hide {
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.reveal:hover+.hide {
+  display: block;
+  opacity: 1 !important;
+}
