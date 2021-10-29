@@ -1,7 +1,3 @@
-import {
-  ProxyState
-} from "../AppState.js"
-
 export class ToDo {
 
   constructor(data) {

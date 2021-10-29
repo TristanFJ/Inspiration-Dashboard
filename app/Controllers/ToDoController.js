@@ -13,6 +13,7 @@ function _drawToDo() {
   toDoPage.innerHTML = template
 }
 
+
 export class ToDoController {
   constructor() {
     this.getToDo()

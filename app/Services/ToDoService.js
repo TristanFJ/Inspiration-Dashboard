@@ -32,8 +32,7 @@ class ToDoService {
     let totalToDos = toDos.length
     let done = toDos.filter(done => done.completed == true)
     let totalCompleted = done.length
-    console.log(totalToDos + " : " + totalCompleted);
-    document.getElementById('completed').innerHTML = (totalToDos + " : " + totalCompleted)
+    document.getElementById('completed').innerHTML = (totalCompleted + " : " + totalToDos)
   }
 
   async deleteToDo(id) {
@@ -53,16 +52,6 @@ class ToDoService {
     const res = await sandboxApi.put('Tristan/todos/' + found.id, found)
     toDos = toDos
   }
-
-  // countToDos() {
-  //   let toDos = ProxyState.toDos
-  //   totalToDos = toDos.length
-  //   let done = toDos.filter(done => done.completed == true)
-  //   let totalCompleted = done.length
-  //   console.log(totalToDos + " : " + totalCompleted);
-  //   document.getElementById('completed').innerHTML = (totalToDos + " : " + totalCompleted)
-  // }
-
 
 }
 export const toDoService = new ToDoService();
