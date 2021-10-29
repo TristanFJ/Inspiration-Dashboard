@@ -6,7 +6,6 @@ import {
 } from "../Services/ToDoService.js";
 
 function _drawToDo() {
-  console.log("_drawToDo invoked");
   let toDos = ProxyState.toDos
   let template = ''
   const toDoPage = document.getElementById('todo')
@@ -71,5 +70,16 @@ export class ToDoController {
     } catch (e) {
       console.error(e);
     }
+  }
+
+  async toggleCheck(id) {
+
+    try {
+      await toDoService.toggleCheck(id)
+      this.getToDo()
+    } catch (e) {
+      console.error(e);
+    }
+
   }
 }

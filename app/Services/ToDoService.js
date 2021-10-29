@@ -28,16 +28,22 @@ class ToDoService {
     ProxyState.toDos
     const res = await sandboxApi.get('Tristan/todos')
     ProxyState.toDos = res.data
-    console.log('res.data: ', res.data);
   }
 
   async deleteToDo(id) {
     let toDos = ProxyState.toDos
     const res = await sandboxApi.delete('Tristan/todos/' + id)
-    console.log(res.data);
     toDos = toDos.filter(t => t.id != id)
   }
 
+
+  async toggleCheck(id) {
+    let toDos = ProxyState.toDos
+    const found = toDos.find(t => t.id === id)
+    found.completed = !found.completed
+    const res = await sandboxApi.put('Tristan/todos/' + found.id, found)
+    toDos = toDos
+  }
 
 }
 export const toDoService = new ToDoService();
