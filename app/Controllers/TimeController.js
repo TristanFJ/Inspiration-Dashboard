@@ -7,11 +7,10 @@ function _drawTime() {
   let date = new Date()
   let clock = date.toLocaleTimeString()
   timePage.innerText = clock
-  console.log('clock');
 }
 
 function interval() {
-  debugger
+
   let i = setInterval(_drawTime, [1000])
 }
 
