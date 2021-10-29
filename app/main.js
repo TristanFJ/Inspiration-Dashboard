@@ -1,7 +1,8 @@
-import { ValuesController } from "./Controllers/ValuesController.js";
+import { ToDoController } from "./Controllers/ToDoController.js";
 
 class App {
-  valuesController = new ValuesController();
+
+  toDoController = new ToDoController()
 }
 
 window["app"] = new App();
