@@ -30,21 +30,18 @@
         <div class="col-md-4">
           <div>
 
-            <!-- <div class="card m-2" style="">
-              <div class="card-body">
-                <h5 class="card-title">To Do's</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div> -->
-
-
             <div class="col-4 card p-3 m-3 elevation-4"
               style="border-width: 3px; width: fit-content; height: fit-content;">
               <div class="card-body">
                 <h5 class="card-title text-center">To Do List</h5>
                 <p class="card-text text-center"></p>
               </div>
-              <div class="container text-left d-flex flex-column" id="todo">
+              <div class="container text-left d-flex flex-column">
+
+                <div id="todo">
+
+                </div>
+
               </div>
               <form onsubmit="app.toDoController.createToDo()">
                 <div class="col pt-3 input-group text-center">
