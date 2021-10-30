@@ -10,9 +10,7 @@ import {
 
 class ImageService {
 
-  constructor() {
-    console.log('ImageConstructor');
-  }
+  constructor() {}
 
   async getImage() {
     const res = await sandboxApi.get('images')

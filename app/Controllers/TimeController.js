@@ -11,7 +11,7 @@ function _drawTime() {
 
 function interval() {
 
-  let i = setInterval(_drawTime, [1000])
+  let i = setInterval(_drawTime, 1000)
 }
 
 export class TimeController {
