@@ -10,16 +10,29 @@ import {
 
 class TempService {
 
-  constructor() {
-    console.log('tempservice connected');
-  }
+  constructor() {}
 
   async getTemp() {
 
     const res = await sandboxApi.get('weather')
     const temp = new Temp(res.data)
     ProxyState.temp = temp
-    console.log(ProxyState.temp);
+  }
+
+  toggleTemp() {
+    const tempPage = document.getElementById('temp')
+    const fah = ProxyState.temp.fah + " °F"
+    const cel = ProxyState.temp.cel + " °C"
+    const kel = ProxyState.temp.temp + " °K"
+
+    if (tempPage.innerText == fah) {
+      return tempPage.innerText = cel
+    } else if (tempPage.innerText == cel) {
+      return tempPage.innerText = kel
+    } else if (tempPage.innerText == kel) {
+      return tempPage.innerText = fah
+    }
+
   }
 }
 

@@ -17,7 +17,6 @@ function _drawTemp() {
 
 export class TempController {
   constructor() {
-    console.log('tempcontroller connected');
     ProxyState.on('temp', _drawTemp)
     this.getTemp()
   }
@@ -31,14 +30,6 @@ export class TempController {
   }
 
   toggleTemp() {
-    const tempPage = document.getElementById('temp')
-    const fah = ProxyState.temp.fah + " °F"
-    const cel = ProxyState.temp.cel + " °C"
-
-    if (tempPage.innerText == fah) {
-      return tempPage.innerText = cel
-    } else {
-      return tempPage.innerText = fah
-    }
+    tempService.toggleTemp()
   }
 }
